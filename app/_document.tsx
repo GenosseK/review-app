@@ -1,23 +1,23 @@
 import Document, { DocumentContext, DocumentInitialProps, Html, Main, NextScript } from 'next/document';
-import Head from 'next/head';
 
 class MyDocument extends Document {
-
 	static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
-		const initialProps = await Document.getInitialProps(ctx)
-		return { ...initialProps }
+		const initialProps = await Document.getInitialProps(ctx);
+		return { ...initialProps };
 	}
 
 	render(): JSX.Element {
 		return (
-			< Html lang="ru" >
-				<Head />
+			<Html lang="ru">
+				<head>
+
+				</head>
 				<body>
 					<Main />
 					<NextScript />
 				</body>
-			</Html >
-		)
+			</Html>
+		);
 	}
 }
 
