@@ -2,10 +2,10 @@ import { HeaderProps } from './Header.props';
 import styles from './Header.module.css';
 import cn from 'classnames';
 
-export const Header = ({ ...props }: HeaderProps): JSX.Element => {
+export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
 	return (
-		<div {...props}>
+		<header className={cn(className, styles.header)} {...props}>
 			HEADER
-		</div>
+		</header>
 	)
 }
