@@ -206,11 +206,9 @@
 		border-bottom: 1px solid rgb(var(--callout-border-rgb) 0.25);
 		border-radius: 0;
 		background:
-			linear-gradient(
-				to bottom,
+			linear-gradient(to bottom,
 				rgb(var(--background-start-rgb) 1),
-				rgb(var(--callout-rgb) 0.5)
-			);
+				rgb(var(--callout-rgb) 0.5));
 		background-clip: padding-box;
 		inset: 0 0 auto;
 		backdrop-filter: blur(24px);
@@ -227,11 +225,9 @@
 		pointer-events: none;
 
 		background:
-			linear-gradient(
-				to bottom,
+			linear-gradient(to bottom,
 				transparent 0%,
-				rgb(var(--background-end-rgb)) 40%
-			);
+				rgb(var(--background-end-rgb)) 40%);
 		inset: auto 0 0;
 	}
 }

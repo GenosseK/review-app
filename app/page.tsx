@@ -1,6 +1,5 @@
 "use client"
-import { GetStaticProps } from 'next';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Htag, Rating, Tag } from './components';
 import { Button } from './components/Button/Button';
 import { P } from './components/P/P';
@@ -8,9 +7,24 @@ import { withLayout } from './layout/Layout';
 import axios from 'axios';
 import { MenuItem } from './interfaces/menu.interface';
 
-function Home({ menu, firstCategory }: HomeProps): JSX.Element {
-  const [rating, setRating] = useState<number>(4)
+function Home(): JSX.Element {
+  const [rating, setRating] = useState<number>(4);
+  const [menu, setMenu] = useState<MenuItem[]>([]);
+  const firstCategory = 0;
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const { data: menuData } = await axios.post<MenuItem[]>(`${process.env.NEXT_PUBLIC_DOMAIN}/api/top-page/find`, {
+          firstCategory
+        });
+        setMenu(menuData);
+      } catch (error) {
+        console.error('Error fetching menu data:', error);
+      }
+    };
+    fetchData();
+  }, []);
 
   return (
     <>
@@ -32,31 +46,9 @@ function Home({ menu, firstCategory }: HomeProps): JSX.Element {
             {m._id.secondCategory}
           </li>
         ))}
-
       </ul>
-
     </>
   );
 }
 
 export default withLayout(Home);
-
-export const getStaticProps: GetStaticProps = async () => {
-
-  const firstCategory = 0;
-  const { data: menu } = await axios.post<MenuItem>(process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find', {
-    firstCategory
-  });
-
-  return {
-    props: {
-      menu,
-      firstCategory,
-    }
-  };
-};
-
-interface HomeProps extends Record<string, unknown> {
-  menu: MenuItem[];
-  firstCategory: number;
-}
