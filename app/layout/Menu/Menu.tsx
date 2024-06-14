@@ -1,3 +1,4 @@
+'use client'
 import styles from './Menu.module.css';
 import cn from 'classnames';
 import { useContext } from 'react';
