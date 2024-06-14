@@ -1,4 +1,4 @@
-import { Htag, P } from '../../app/(site)/components/index';
+import { Htag, P } from '../../shared/components/index';
 import { TopPageComponentProps } from './TopPageComponent.props';
 import styles from './TopPageComponent.module.css';
 

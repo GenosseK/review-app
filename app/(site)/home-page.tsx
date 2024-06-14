@@ -1,6 +1,6 @@
 "use client";
-import { withLayout } from '../layout/Layout';
-import { Htag, P, Card } from './components';
+import { withLayout } from '../../shared/layout/withLayout';
+import { Htag, P, Card } from '../../shared/components';
 import styles from './styles.module.css';
 
 function HomePage() {
@@ -25,6 +25,3 @@ function HomePage() {
 }
 
 export default withLayout(HomePage);
-
-
-

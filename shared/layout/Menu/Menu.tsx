@@ -2,7 +2,7 @@
 import styles from './Menu.module.css';
 import cn from 'classnames';
 import { useContext } from 'react';
-import { AppContext } from '../../context/app.context';
+import { AppContext } from '../../../context/app.context';
 import { FirstLevelMenuItem, PageItem } from '../../../interfaces/menu.interface';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
