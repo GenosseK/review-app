@@ -1,6 +1,6 @@
-import { getMenu } from '../../../../api/menu';
-import { getPage } from '../../../../api/page';
-import { TopLevelCategory } from '../../../../interfaces/page.interface'
+import { getMenu } from '../../../api/menu';
+import { getPage } from '../../../api/page';
+import { TopLevelCategory } from '../../../interfaces/page.interface'
 import { Metadata, } from 'next'
 import { notFound } from 'next/navigation'
 
