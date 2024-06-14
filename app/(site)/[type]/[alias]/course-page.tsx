@@ -29,6 +29,3 @@ async function CoursePage({ firstCategory, page, products }: CoursePageProps) {
 }
 
 export default withLayout(CoursePage);
-
-
-
