@@ -3,6 +3,8 @@ import { getPage } from '../../../api/page';
 import { TopLevelCategory } from '../../../interfaces/page.interface'
 import { Metadata, } from 'next'
 import { notFound } from 'next/navigation'
+import CoursesPage from './courses-page';
+
 
 export async function generateMetadata({ params }: { params: { alias: string } }): Promise<Metadata> {
 	const page = await getPage(params.alias);
@@ -23,7 +25,7 @@ export default async function PageProducts({ params }: { params: { alias: string
 	}
 	return (
 		<div>
-			{page.title}
+			<CoursesPage menu={page?.menu || []} firstCategory={TopLevelCategory.Courses} />
 		</div>
 	)
 }
