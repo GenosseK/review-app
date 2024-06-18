@@ -1,31 +1,58 @@
 import { getMenu } from '../../../api/menu';
-import { getPage } from '../../../api/page';
+
 import { TopLevelCategory } from '../../../interfaces/page.interface'
-import { Metadata, } from 'next'
+import { GetStaticPropsContext, Metadata, } from 'next'
 import { notFound } from 'next/navigation'
 import CoursesPage from './courses-page';
+import axios from 'axios';
+import { ParsedUrlQuery } from 'querystring';
+import { firstLevelMenu } from '../../../helpers/helpers';
+import { MenuItem } from '../../../interfaces/menu.interface';
 
 
-export async function generateMetadata({ params }: { params: { alias: string } }): Promise<Metadata> {
-	const page = await getPage(params.alias);
-	return {
-		title: page?.metaTitle
+const getPage = async ({
+	params,
+}: GetStaticPropsContext<ParsedUrlQuery>) => {
+	if (!params) {
+		return notFound();
 	}
-}
 
-export async function generateStaticParams() {
-	const menu = await getMenu(0);
-	return menu.flatMap(item => item.pages.map(page => ({ alias: page.alias })));
-}
+	const firstCategoryItem = firstLevelMenu.find((el) => el.route === params.type);
 
-export default async function PageProducts({ params }: { params: { alias: string } }) {
-	const page = await getPage(params.alias);
-	if (!page) {
+	if (!params.type) {
+		return notFound();
+	}
+
+	try {
+		const { data: menu } = await axios.post<MenuItem[]>(process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find', {
+			firstCategory: firstCategoryItem?.id,
+		});
+		if (menu.length === 0) {
+			return notFound();
+		}
+
+		return {
+			menu,
+			firstCategory: firstCategoryItem?.id,
+		};
+	} catch {
 		notFound();
 	}
+};
+
+export async function generateStaticParams() {
+	return firstLevelMenu.map((el) => ({ type: el.route }));
+}
+
+export default async function Type({
+	params
+}: {
+	params: { alias: string }
+}) {
+	const data = await getPage({ params });
 	return (
-		<div>
-			<CoursesPage menu={page?.menu || []} firstCategory={TopLevelCategory.Courses} />
-		</div>
-	)
+		<main>
+			<CoursesPage menu={data?.menu || []} firstCategory={TopLevelCategory.Courses} />
+		</main>
+	);
 }

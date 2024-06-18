@@ -10,6 +10,7 @@ import { firstLevelMenu } from '../../../helpers/helpers';
 
 export const Menu = (): JSX.Element => {
 	const { menu, setMenu, firstCategory } = useContext(AppContext);
+
 	const pathname = usePathname();
 
 	const openSecondLevel = (secondCategory: string) => {

@@ -1,4 +1,5 @@
 "use client";
+import { FC } from 'react';
 import { withLayout } from '../../../../shared/layout/withLayout';
 import { TopPageComponent } from '../../../../page-components/TopPageComponent/TopPageComponent';
 import {
@@ -8,17 +9,16 @@ import {
   type TopPageModel,
   TopLevelCategory,
 } from '../../../../interfaces/page.interface';
-import { ProductModel } from '../../../../interfaces/product.interface'
-
+import { ProductModel } from '../../../../interfaces/product.interface';
 
 interface CoursePageProps extends Record<string, unknown> {
-  menu?: MenuItem[];
-  firstCategory?: TopLevelCategory;
+  menu: MenuItem[];
+  firstCategory: TopLevelCategory;
   page?: TopPageModel;
   products?: ProductModel[];
 }
 
-async function CoursePage({ firstCategory, page, products }: CoursePageProps) {
+const CoursePage: FC<CoursePageProps> = ({ firstCategory, page, products }) => {
   return (
     <TopPageComponent
       firstCategory={firstCategory}
@@ -26,6 +26,6 @@ async function CoursePage({ firstCategory, page, products }: CoursePageProps) {
       products={products}
     />
   );
-}
+};
 
 export default withLayout(CoursePage);
