@@ -3,7 +3,7 @@ import { TopLevelCategory } from '../../interfaces/page.interface';
 import { Htag, Tag, HhData, Advantages, P, Sort } from '../../shared/components';
 import { TopPageComponentProps } from './TopPageComponent.props';
 import { SortEnum } from '../../shared/components/Sort/Sort.props';
-import { useReducer } from 'react';
+import { useEffect, useReducer } from 'react';
 import { sortReducer } from './sort.reducer';
 import { Product } from '../../shared/components/Product/Product';
 
@@ -13,6 +13,10 @@ export const TopPageComponent = ({ page, products, firstCategory }: TopPageCompo
 	const setSort = (sort: SortEnum) => {
 		dispathSort({ type: sort });
 	};
+
+	useEffect(() => {
+		dispathSort({ type: 'reset', initialState: products });
+	}, [products]);
 
 	return (
 		<div className={styles.wrapper}>
