@@ -9,10 +9,11 @@ import { Rating } from '../Rating/Rating';
 import { Tag } from '../Tag/Tag';
 import Image from 'next/image';
 import { Review } from '../Review/Review';
-import { useRef, useState } from 'react';
+import { ForwardedRef, forwardRef, useRef, useState } from 'react';
 import { ReviewForm } from '../ReviewForm/ReviewForm';
+import { motion } from 'framer-motion';
 
-export const Product = ({ product, className, ...props }: ProductProps): JSX.Element => {
+export const Product = motion(forwardRef(({ product, className, ...props }: ProductProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
 	const [isReviewOpened, setIsReviewOpened] = useState<boolean>(false);
 	const reviewRef = useRef<HTMLDivElement>(null);
 
@@ -25,7 +26,7 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
 	};
 
 	return (
-		<div className={className} {...props}>
+		<div className={className} {...props} ref={ref}>
 			<Card className={styles.product}>
 				<div className={styles.logo}>
 					<Image
@@ -94,4 +95,4 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
 			</Card>
 		</div>
 	);
-};
+}));
