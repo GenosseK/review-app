@@ -25,5 +25,3 @@ export default async function Home() {
     </div>
   )
 }
-
-//export default withLayout(Home);

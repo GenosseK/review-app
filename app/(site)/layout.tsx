@@ -23,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <head>
+        <meta property="og:locale" content="ru_RU" />
       </head>
       <body className={inter.className}>
         {children}
