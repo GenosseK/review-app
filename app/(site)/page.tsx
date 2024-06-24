@@ -20,9 +20,9 @@ export default async function Home() {
   const menu = await getMenu(0);
 
   return (
-    <main>
+    <div>
       <HomePage menu={menu} firstCategory={firstCategory} />
-    </main>
+    </div>
   )
 }
 
