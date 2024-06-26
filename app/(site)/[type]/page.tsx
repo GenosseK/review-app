@@ -1,7 +1,6 @@
-
-import { TopLevelCategory } from '../../../interfaces/page.interface'
-import { GetStaticPropsContext } from 'next'
-import { notFound } from 'next/navigation'
+import { TopLevelCategory } from '../../../interfaces/page.interface';
+import { GetStaticPropsContext } from 'next';
+import { notFound } from 'next/navigation';
 import CoursesPage from './courses-page';
 import axios from 'axios';
 import { ParsedUrlQuery } from 'querystring';

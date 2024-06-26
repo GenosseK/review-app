@@ -1,8 +1,8 @@
-'use client'
+'use client';
 import React from 'react';
 import { Htag } from '../../shared/components';
 import { withLayout } from '../../shared/layout/withLayout';
-import styles from './page.module.css'
+import styles from './page.module.css';
 
 
 export function Error404(): JSX.Element {

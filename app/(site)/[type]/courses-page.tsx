@@ -1,17 +1,9 @@
-'use client'
-
-import { MenuItem } from "../../../interfaces/menu.interface";
-import { TopLevelCategory } from "../../../interfaces/page.interface";
+'use client';
 import { Card, Htag, P, Input, Textarea } from '../../../shared/components';
 import { withLayout } from "../../../shared/layout/withLayout";
 import styles from '../styles.module.css';
 
-interface CoursesPagePageProps extends Record<string, unknown> {
-    menu?: MenuItem[];
-    firstCategory?: TopLevelCategory;
-}
-
-async function CoursesPage({ menu }: CoursesPagePageProps) {
+async function CoursesPage() {
     return (
         <>
             <main>
@@ -33,7 +25,7 @@ async function CoursesPage({ menu }: CoursesPagePageProps) {
                 <Textarea placeholder='тест area' />
             </main>
         </>
-    )
+    );
 
 }
 

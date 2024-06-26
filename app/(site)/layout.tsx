@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import '../../styles/globals.css';
 import { Open_Sans } from 'next/font/google';
 
-const inter = Open_Sans({ subsets: ['latin'] })
+const inter = Open_Sans({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: "Review App",
