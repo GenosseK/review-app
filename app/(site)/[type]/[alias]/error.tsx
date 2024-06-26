@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 export default function Error({
 	error,
@@ -8,5 +8,5 @@ export default function Error({
 		<div>Что-то пошло не так - Product</div>
 		<div>{JSON.stringify(error)}</div>
 		<button onClick={() => reset()}>Ещё раз</button>
-	</>
+	</>;
 }

@@ -1,11 +1,6 @@
 import React from 'react';
-import { Button, Htag, P, Rating, Tag } from '../../shared/components/index';
-import { withLayout } from '../../shared/layout/Layout';
-import axios from 'axios';
-import { MenuItem } from '../../interfaces/menu.interface';
 import { Metadata } from 'next';
 import { getMenu } from '../../api/menu';
-import { Menu } from '../../shared/layout/Menu/Menu';
 import styles from './page.module.css'
 import HomePage from './home-page';
 

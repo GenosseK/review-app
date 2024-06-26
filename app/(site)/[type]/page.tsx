@@ -1,7 +1,6 @@
-import { getMenu } from '../../../api/menu';
 
 import { TopLevelCategory } from '../../../interfaces/page.interface'
-import { GetStaticPropsContext, Metadata, } from 'next'
+import { GetStaticPropsContext } from 'next'
 import { notFound } from 'next/navigation'
 import CoursesPage from './courses-page';
 import axios from 'axios';

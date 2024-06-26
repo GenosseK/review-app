@@ -4,8 +4,7 @@ import cn from 'classnames';
 import { Header } from './Header/Header';
 import { Sidebar } from './Sidebar/Sidebar';
 import { Footer } from './Footer/Footer';
-import { FunctionComponent, useRef, useState, KeyboardEvent } from 'react';
-import { AppContextProvider, IAppContext } from '../../context/app.context';
+import { useRef, useState, KeyboardEvent } from 'react';
 import { Up } from '../components';
 
 export const Layout = ({ children }: LayoutProps): JSX.Element => {
