@@ -39,7 +39,9 @@ export const Rating = forwardRef(({ isEditable = false, error, rating, setRating
 					onClick={() => onClick(i + 1)}
 					tabIndex={computeFocus(rating, i)}
 					onKeyDown={handleKey}
-					ref={r => ratingArrayRef.current?.push(r)}
+					ref={el => {
+						ratingArrayRef.current[i] = el;
+					}}
 					role={isEditable ? 'slider' : ''}
 					aria-invalid={error ? true : false}
 					aria-valuenow={rating}

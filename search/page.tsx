@@ -1,5 +1,7 @@
 "use client";
-import { withLayout } from '../../../shared/layout/withLayout';
+
+import { withLayout } from '../shared/layout/withLayout';
+
 
 function Search(): JSX.Element {
 
