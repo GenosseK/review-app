@@ -4,7 +4,7 @@ module.exports = {
 	},
 	webpack(config, options) {
 		config.module.rules.push({
-			test: /\.svg$/, // Ensure the test property is correctly placed here
+			test: /\.svg$/,
 			use: [
 				{
 					loader: '@svgr/webpack',
