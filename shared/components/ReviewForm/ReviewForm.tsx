@@ -26,8 +26,12 @@ export const ReviewForm = ({ productId, isOpened, className, ...props }: ReviewF
 			} else {
 				setError('Что-то пошло не так');
 			}
-		} catch (e) {
-			setError(e.message);
+		} catch (e: unknown) {
+			if (e instanceof Error) {
+				setError(e.message);
+			} else {
+				setError('Неизвестная ошибка');
+			}
 		}
 	};
 
