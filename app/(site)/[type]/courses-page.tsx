@@ -21,8 +21,6 @@ async function CoursesPage() {
                         Также Вы можете оставить отзыв о курсе, которым уже воспользовались.
                     </P>
                 </Card>
-                <Input placeholder='тест' />
-                <Textarea placeholder='тест area' />
             </main>
         </>
     );

@@ -1,7 +1,7 @@
 "use client";
 import styles from "./Menu.module.css";
 import cn from "classnames";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../../../context/app.context";
 import {
 	FirstLevelMenuItem,
@@ -12,12 +12,14 @@ import { usePathname } from "next/navigation";
 import { firstLevelMenu } from "../../../helpers/helpers";
 import { motion } from "framer-motion";
 import { KeyboardEvent } from 'react';
+import { TopLevelCategory } from '../../../interfaces/page.interface';
+import { useRouter } from 'next/navigation';
 
 export const Menu = (): JSX.Element => {
-	const { menu, setMenu, firstCategory } = useContext(AppContext);
+	const { menu, setMenu, firstCategory, setFirstCategory } = useContext(AppContext);
 	const [announce, setAnnounce] = useState<'closed' | 'opened' | undefined>();
-
 	const pathname = usePathname();
+	const router = useRouter();
 
 	const variants = {
 		visible: {
@@ -37,6 +39,15 @@ export const Menu = (): JSX.Element => {
 		},
 		hidden: { opacity: 0, height: 0 },
 	};
+
+	useEffect(() => {
+		if (firstCategory === null) {
+			const currentFirstCategory = firstLevelMenu.find((m) => `/${m.route}` === pathname.split('/')[1]);
+			if (currentFirstCategory) {
+				setFirstCategory(currentFirstCategory.id);
+			}
+		}
+	}, [pathname, firstCategory, setFirstCategory]);
 
 	const openSecondLevel = (secondCategory: string) => {
 		setMenu &&
@@ -58,6 +69,12 @@ export const Menu = (): JSX.Element => {
 		}
 	};
 
+	const handleFirstCategorySelect = (category: TopLevelCategory, route: string) => {
+		setFirstCategory && setFirstCategory(category);
+		setMenu && setMenu(menu.map(m => ({ ...m, isOpened: false })));  // Close all second-level menus
+		router.push(route);
+	};
+
 	const buildFirstLevel = () => {
 		return (
 			<ul className={styles.firstLevelList}>
@@ -68,6 +85,10 @@ export const Menu = (): JSX.Element => {
 								className={cn(styles.firstLevel, {
 									[styles.firstLevelActive]: m.id == firstCategory,
 								})}
+								onClick={(e) => {
+									e.preventDefault();
+									handleFirstCategorySelect(m.id, `/${m.route}`);
+								}}
 							>
 								{m.icon}
 								<span>{m.name}</span>
@@ -94,7 +115,9 @@ export const Menu = (): JSX.Element => {
 								className={styles.secondLevel}
 								onClick={() => openSecondLevel(m._id.secondCategory)}
 								aria-expanded={m.isOpened}
-							>{m._id.secondCategory}</button>
+							>
+								{m._id.secondCategory}
+							</button>
 							<motion.ul
 								layout
 								variants={variants}
@@ -130,7 +153,7 @@ export const Menu = (): JSX.Element => {
 	};
 
 	return (
-		<nav className={styles.menu} role='navigation'>
+		<nav className={styles.menu} role="navigation">
 			{announce && <span role="log" className="visuallyHidden">{announce == 'opened' ? 'развернуто' : 'свернуто'}</span>}
 			{buildFirstLevel()}
 		</nav>
