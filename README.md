@@ -40,6 +40,8 @@
 
 ## 🎥 Демонстрация функционала:
 
-## <iframe width="560" height="315" src="https://www.youtube.com/embed/tIe7bmg-dv8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tIe7bmg-dv8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+---
 
 💬 Если у вас есть вопросы или предложения, не стесняйтесь обращаться!
