@@ -1,6 +1,6 @@
 "use client";
 import { withLayout } from '../../shared/layout/withLayout';
-import { Htag, P, Card, Input, Textarea } from '../../shared/components';
+import { Htag, P, Card } from '../../shared/components';
 import styles from './styles.module.css';
 
 function HomePage() {

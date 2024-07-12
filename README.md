@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 📚 Review-App
 
-## Getting Started
+🎓 **Review-App** - это агрегатор обучающих курсов по разным направлениям, таким как программирование, бизнес, дизайн, маркетинг, языки и многие другие. С помощью этого приложения вы можете сравнить курсы по интересующим вас направлениям, опираясь на рейтинг, цену, преимущества и недостатки, а также непосредственно на отзывы людей, учувствовавших в курсах. В дальнейшем планируется расширение функционала, путём добавление таких категорий, как Сервисы, Книги и Продукты.
 
-First, run the development server:
+## 🛠️ Технологии:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=nextdotjs&logoColor=white) Next.js
+- ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white) TypeScript
+- ![Axios](https://img.shields.io/badge/Axios-5A29E4?style=flat&logo=axios&logoColor=white) Axios
+- ![Framer Motion](https://img.shields.io/badge/Framer%20Motion-0055FF?style=flat&logo=framer&logoColor=white) Framer Motion
+- ![Webpack](https://img.shields.io/badge/Webpack-8DD6F9?style=flat&logo=webpack&logoColor=black) Webpack
+- ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=nodedotjs&logoColor=white) Node.js
+- ![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=flat&logo=eslint&logoColor=white) ESLint
+- ![Stylelint](https://img.shields.io/badge/Stylelint-263238?style=flat&logo=stylelint&logoColor=white) Stylelint
+- ![Husky](https://img.shields.io/badge/Husky-000000?style=flat&logo=husky&logoColor=white) Husky
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📦 Установка:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Клонировать репозиторий:
+   ```sh
+   git clone https://github.com/GenosseK/review-app.git
+   ```
+2. Перейти в директорию проекта:
+   ```sh
+   cd review-app
+   ```
+3. Установить зависимости:
+   ```sh
+   npm install
+   ```
+4. Собрать проект:
+   ```sh
+   npm run build
+   ```
+5. Запустить проект:
+   ```sh
+   npm run start
+   ```
+6. Открыть приложение локально в браузере: [http://localhost:3000](http://localhost:3000)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 🎥 Демонстрация функционала:
 
-## Learn More
+<video width="320" height="240" controls>
+  <source src="./Demo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+💬 Если у вас есть вопросы или предложения, не стесняйтесь обращаться!

@@ -1,5 +1,5 @@
 'use client';
-import { Card, Htag, P, Input, Textarea } from '../../../shared/components';
+import { Card, Htag, P } from '../../../shared/components';
 import { withLayout } from "../../../shared/layout/withLayout";
 import styles from '../styles.module.css';
 
