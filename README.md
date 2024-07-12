@@ -40,7 +40,7 @@
 
 ## 🎥 Демонстрация функционала:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/tIe7bmg-dv8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/tIe7bmg-dv8)
 
 ---
 
