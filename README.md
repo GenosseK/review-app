@@ -40,9 +40,7 @@
 
 ## 🎥 Демонстрация функционала:
 
-<video src="./Demo.mp4" controls="controls" style="max-width: 100%; height: auto;">
-  Your browser does not support the video tag.
-</video>
+[![Watch the video](https://img.youtube.com/vi/tIe7bmg-dv8/0.jpg)](https://youtu.be/tIe7bmg-dv8)
 
 ---
 
